@@ -109,6 +109,13 @@ def getIndices(obj,shape,offsetv,offsetvn):
                     ei = " " + str(findVert(e.Vertexes[0],shape.Vertexes) + offsetv)
                     ei += " " + str(findVert(e.Vertexes[-1],shape.Vertexes) + offsetv)
                     elist.append(ei)
+            for w in shape.Wires:
+                for e in w.OrderedEdges:
+                    if DraftGeomUtils.geomType(e) == "Line":
+                        ei = " " + str(findVert(e.Vertexes[0],shape.Vertexes) + offsetv)
+                        ei += " " + str(findVert(e.Vertexes[-1],shape.Vertexes) + offsetv)
+                        elist.append(ei)
+
         for f in shape.Faces:
             if len(f.Wires) > 1:
                 # if we have holes, we triangulate
