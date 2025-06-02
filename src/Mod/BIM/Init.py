@@ -29,7 +29,7 @@ FreeCAD.addExportType("Industry Foundation Classes (*.ifc)","importers.exportIFC
 FreeCAD.addImportType("Industry Foundation Classes (*.ifc)", "nativeifc.ifc_import")
 FreeCAD.addExportType("Industry Foundation Classes - IFCJSON (*.ifcJSON)","importers.exportIFC")
 FreeCAD.addImportType("Wavefront OBJ - BIM module (*.obj *.OBJ)","importers.importOBJ")
-FreeCAD.addExportType("Wavefront OBJ - BIM module (*.obj)","importers.importOBJ")
+FreeCAD.addExportType("Wavefront OBJ - BIM module (*.obj)","importers.exportOBJ")
 FreeCAD.addExportType("WebGL file (*.html)","importers.importWebGL")
 FreeCAD.addExportType("JavaScript Object Notation (*.json)","importers.importJSON")
 FreeCAD.addImportType("Collada (*.dae *.DAE)","importers.importDAE")
