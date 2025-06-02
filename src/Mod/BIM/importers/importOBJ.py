@@ -23,7 +23,7 @@
 # ***************************************************************************
 
 ## @package importOBJ
-#  \ingroup ARCH
+#  \ingroup BIM
 #  \brief OBJ file format exporter
 #
 #  This module provides tools to import & export OBJ files.
@@ -86,7 +86,7 @@ def getIndices(obj,shape,offsetv,offsetvn):
                 tol = params.get_param("MaxDeviationExport",path="Mod/Mesh")
                 mesh = Mesh.Mesh()
                 mesh.addFacets(shape.getFaces(tol))
-                FreeCAD.Console.PrintWarning(translate("Arch","Found a shape containing curves, triangulating")+"\n")
+                FreeCAD.Console.PrintWarning(translate("BIM","Found a shape containing curves, triangulating")+"\n")
                 break
     elif isinstance(shape,Mesh.Mesh):
         mesh = shape
@@ -284,7 +284,7 @@ def export(exportList,filename,colors=None):
                     done.append(mat.Name)
         outfile.write("# Material Count: " + str(len(materials)))
         outfile.close()
-        FreeCAD.Console.PrintMessage(translate("Arch","Successfully written") + ' ' + filenamemtl + "\n")
+        FreeCAD.Console.PrintMessage(translate("BIM","Successfully written") + ' ' + filenamemtl + "\n")
 
 
 # return entry after given index from an array or None on array end
@@ -392,7 +392,7 @@ def insert(filename,docname):
             material = line[7:]
     if activeobject:
         makeMesh(doc,group,activeobject,verts,medges,facets,material,colortable)
-    FreeCAD.Console.PrintMessage(translate("Arch","Successfully imported") + ' ' + filename + "\n")
+    FreeCAD.Console.PrintMessage(translate("BIM","Successfully imported") + ' ' + filename + "\n")
     return doc
 
 def makeMesh(doc,group,activeobject,verts,edges,facets,material,colortable):
